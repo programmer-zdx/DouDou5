@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aaa.project.system.planInfo.mapper.PlanInfoMapper">
+
+    <resultMap type="PlanInfo" id="PlanInfoResult">
+        <result property="planId"    column="plan_id"    />
+        <result property="planName"    column="plan_name"    />
+        <result property="resId"    column="res_id"    />
+        <result property="stpoId"    column="stpo_id"    />
+        <result property="starttime"    column="starttime"    />
+        <result property="endtime"    column="endtime"    />
+        <result property="planState"    column="plan_state"    />
+        <result property="checkResult"    column="check_result"    />
+        <result property="templateId"    column="template_id"    />
+    </resultMap>
+
+    <sql id="selectPlanInfoVo">
+        select plan_id, plan_name, res_id, stpo_id, starttime, endtime, plan_state, check_result, template_id from hn_plan_info
+    </sql>
+
+    <select id="selectPlanInfoList" parameterType="PlanInfo" resultMap="PlanInfoResult">
+        select  p.plan_id,p.plan_name,r.sitename,r.longandlat,d.dept_name,d.phone,d.email,p.starttime,p.endtime,st.standard_name,st.standard_quality,st.standard_cycle,p.plan_state,p.check_result,t.temp_type
+        FROM hn_plan_info p ,sys_dept d , hn_res_info r, hn_temp_info t, hn_standard_info st
+        <where> d.dept_id = p.stpo_id
+            AND r.res_id = p.res_id
+            AND t.temp_id = p.template_id
+            AND st.standard_id = t.standard_id
+            <if test="planId != null "> and plan_id = #{planId}</if>
+            <if test="planName != null  and planName != '' "> and plan_name = #{planName}</if>
+            <if test="resId != null "> and res_id = #{resId}</if>
+            <if test="stpoId != null "> and stpo_id = #{stpoId}</if>
+            <if test="starttime != null "> and starttime = #{starttime}</if>
+            <if test="endtime != null "> and endtime = #{endtime}</if>
+            <if test="planState != null  and planState != '' "> and plan_state = #{planState}</if>
+            <if test="checkResult != null  and checkResult != '' "> and check_result = #{checkResult}</if>
+            <if test="templateId != null "> and template_id = #{templateId}</if>
+        </where>
+    </select>
+
+    <select id="selectPlanInfoById" parameterType="Integer" resultMap="PlanInfoResult">
+        select plan_id, plan_name, res_id, stpo_id, starttime, endtime, plan_state, check_result, template_id from hn_plan_info
+        where plan_id = #{planId}
+    </select>
+    <select id="findPlan" resultMap="PlanInfoResult">
+        select * from hn_plan_info
+    </select>
+
+    <insert id="insertPlanInfo" parameterType="PlanInfo">
+        insert  into hn_plan_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="planId != null  ">plan_id,</if>
+            <if test="planName != null  and planName != ''  ">plan_name,</if>
+            <if test="resId != null  ">res_id,</if>
+            <if test="stpoId != null  ">stpo_id,</if>
+            <if test="starttime != null  ">starttime,</if>
+            <if test="endtime != null  ">endtime,</if>
+            <if test="planState != null  and planState != ''  ">plan_state,</if>
+            <if test="checkResult != null  and checkResult != ''  ">check_result,</if>
+            <if test="templateId != null  ">template_id,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="planId != null  ">#{planId},</if>
+            <if test="planName != null  and planName != ''  ">#{planName},</if>
+            <if test="resId != null  ">#{resId},</if>
+            <if test="stpoId != null  ">#{stpoId},</if>
+            <if test="starttime != null  ">#{starttime},</if>
+            <if test="endtime != null  ">#{endtime},</if>
+            <if test="planState != null  and planState != ''  ">#{planState},</if>
+            <if test="checkResult != null  and checkResult != ''  ">#{checkResult},</if>
+            <if test="templateId != null  ">#{templateId},</if>
+        </trim>
+    </insert>
+
+    <update id="updatePlanInfo" parameterType="PlanInfo">
+        update hn_plan_info
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="planName != null  and planName != ''  ">plan_name = #{planName},</if>
+            <if test="resId != null  ">res_id = #{resId},</if>
+            <if test="stpoId != null  ">stpo_id = #{stpoId},</if>
+            <if test="starttime != null  ">starttime = #{starttime},</if>
+            <if test="endtime != null  ">endtime = #{endtime},</if>
+            <if test="planState != null  and planState != ''  ">plan_state = #{planState},</if>
+            <if test="checkResult != null  and checkResult != ''  ">check_result = #{checkResult},</if>
+            <if test="templateId != null  ">template_id = #{templateId},</if>
+        </trim>
+        where plan_id = #{planId}
+    </update>
+
+    <delete id="deletePlanInfoById" parameterType="Integer">
+        delete from hn_plan_info where plan_id = #{planId}
+    </delete>
+
+    <delete id="deletePlanInfoByIds" parameterType="String">
+        delete from hn_plan_info where plan_id in
+        <foreach item="planId" collection="array" open="(" separator="," close=")">
+            #{planId}
+        </foreach>
+    </delete>
+
+</mapper>

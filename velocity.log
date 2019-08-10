@@ -1,0 +1,586 @@
+2019-07-23 10:51:31,630 - Log4JLogChute initialized using file 'velocity.log'
+2019-07-23 10:51:31,630 - Initializing Velocity, Calling init()...
+2019-07-23 10:51:31,630 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-07-23 10:51:31,630 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-07-23 10:51:31,630 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-07-23 10:51:31,630 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/Priority).  Falling back to next log system...
+2019-07-23 10:51:31,630 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-07-23 10:51:31,630 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-07-23 10:51:31,630 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:51:31,640 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-07-23 10:51:31,640 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-07-23 10:51:31,650 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-07-23 10:51:31,650 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-07-23 10:51:31,650 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-07-23 10:51:31,650 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-07-23 10:51:31,650 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-07-23 10:51:31,650 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-07-23 10:51:31,650 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-07-23 10:51:31,650 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-07-23 10:51:31,660 - Created '20' parsers.
+2019-07-23 10:51:31,660 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-07-23 10:51:31,670 - Could not load resource 'VM_global_library.vm' from ResourceLoader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader: ClasspathResourceLoader Error: cannot find resource VM_global_library.vm
+2019-07-23 10:51:31,670 - Velocimacro : Default library not found.
+2019-07-23 10:51:31,670 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-07-23 10:51:31,670 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-07-23 10:51:31,670 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-07-23 10:51:31,670 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-07-23 10:51:31,680 - ResourceManager : found templates/vm/java/domain.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:51:31,690 - ResourceManager : found templates/vm/java/Mapper.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:51:31,700 - ResourceManager : found templates/vm/java/Service.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:51:31,700 - ResourceManager : found templates/vm/java/ServiceImpl.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:51:31,700 - ResourceManager : found templates/vm/java/Controller.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:51:31,710 - ResourceManager : found templates/vm/xml/Mapper.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:51:31,721 - Left side ($primaryKey.extra) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 31, column 89]
+2019-07-23 10:51:31,721 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 35, column 73]
+2019-07-23 10:51:31,721 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 42, column 73]
+2019-07-23 10:51:31,721 - ResourceManager : found templates/vm/html/list.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:51:31,721 - ResourceManager : found templates/vm/html/add.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:51:31,731 - ResourceManager : found templates/vm/html/edit.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:51:31,731 - ResourceManager : found templates/vm/sql/sql.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:51:31,731 - ResourceManager : found templates/vm/java/domain.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:56:24,106 - Log4JLogChute initialized using file 'velocity.log'
+2019-07-23 10:56:24,106 - Initializing Velocity, Calling init()...
+2019-07-23 10:56:24,106 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-07-23 10:56:24,106 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-07-23 10:56:24,106 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-07-23 10:56:24,106 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/Priority).  Falling back to next log system...
+2019-07-23 10:56:24,106 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-07-23 10:56:24,106 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-07-23 10:56:24,116 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:56:24,126 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-07-23 10:56:24,126 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-07-23 10:56:24,126 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-07-23 10:56:24,126 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-07-23 10:56:24,126 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-07-23 10:56:24,126 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-07-23 10:56:24,126 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-07-23 10:56:24,126 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-07-23 10:56:24,136 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-07-23 10:56:24,136 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-07-23 10:56:24,146 - Created '20' parsers.
+2019-07-23 10:56:24,146 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-07-23 10:56:24,146 - Could not load resource 'VM_global_library.vm' from ResourceLoader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader: ClasspathResourceLoader Error: cannot find resource VM_global_library.vm
+2019-07-23 10:56:24,146 - Velocimacro : Default library not found.
+2019-07-23 10:56:24,146 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-07-23 10:56:24,146 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-07-23 10:56:24,146 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-07-23 10:56:24,146 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-07-23 10:56:24,176 - ResourceManager : found templates/vm/java/domain.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:56:38,362 - ResourceManager : found templates/vm/java/Mapper.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:56:39,463 - ResourceManager : found templates/vm/java/Service.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:56:39,993 - ResourceManager : found templates/vm/java/ServiceImpl.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:56:40,663 - ResourceManager : found templates/vm/java/Controller.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:56:41,214 - ResourceManager : found templates/vm/xml/Mapper.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:56:41,224 - Left side ($primaryKey.extra) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 31, column 89]
+2019-07-23 10:56:41,224 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 35, column 73]
+2019-07-23 10:56:41,224 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 42, column 73]
+2019-07-23 10:56:41,674 - ResourceManager : found templates/vm/html/list.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:56:43,354 - ResourceManager : found templates/vm/html/add.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:56:45,864 - ResourceManager : found templates/vm/html/edit.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:56:45,864 - ResourceManager : found templates/vm/sql/sql.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:56:45,874 - ResourceManager : found templates/vm/java/domain.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:56:45,884 - ResourceManager : found templates/vm/java/Mapper.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:56:45,884 - ResourceManager : found templates/vm/java/Service.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:56:45,894 - ResourceManager : found templates/vm/java/ServiceImpl.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:56:45,904 - ResourceManager : found templates/vm/java/Controller.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:56:45,904 - ResourceManager : found templates/vm/xml/Mapper.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:56:45,904 - Left side ($primaryKey.extra) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 31, column 89]
+2019-07-23 10:56:45,904 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 35, column 73]
+2019-07-23 10:56:45,904 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 42, column 73]
+2019-07-23 10:56:45,914 - ResourceManager : found templates/vm/html/list.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:56:45,924 - ResourceManager : found templates/vm/html/add.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:56:45,924 - ResourceManager : found templates/vm/html/edit.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:56:45,924 - ResourceManager : found templates/vm/sql/sql.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:57:59,262 - ResourceManager : found templates/vm/java/domain.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:57:59,262 - ResourceManager : found templates/vm/java/Mapper.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:57:59,272 - ResourceManager : found templates/vm/java/Service.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:57:59,272 - ResourceManager : found templates/vm/java/ServiceImpl.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:57:59,282 - ResourceManager : found templates/vm/java/Controller.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:57:59,282 - ResourceManager : found templates/vm/xml/Mapper.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:57:59,282 - Left side ($primaryKey.extra) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 31, column 89]
+2019-07-23 10:57:59,282 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 35, column 73]
+2019-07-23 10:57:59,282 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 42, column 73]
+2019-07-23 10:57:59,292 - ResourceManager : found templates/vm/html/list.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:57:59,302 - ResourceManager : found templates/vm/html/add.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:57:59,302 - ResourceManager : found templates/vm/html/edit.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:57:59,302 - ResourceManager : found templates/vm/sql/sql.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:57:59,312 - ResourceManager : found templates/vm/java/domain.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:57:59,322 - ResourceManager : found templates/vm/java/Mapper.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:57:59,322 - ResourceManager : found templates/vm/java/Service.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:57:59,322 - ResourceManager : found templates/vm/java/ServiceImpl.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:57:59,322 - ResourceManager : found templates/vm/java/Controller.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:57:59,332 - ResourceManager : found templates/vm/xml/Mapper.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:57:59,332 - Left side ($primaryKey.extra) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 31, column 89]
+2019-07-23 10:57:59,332 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 35, column 73]
+2019-07-23 10:57:59,332 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 42, column 73]
+2019-07-23 10:57:59,332 - ResourceManager : found templates/vm/html/list.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:57:59,342 - ResourceManager : found templates/vm/html/add.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:57:59,342 - ResourceManager : found templates/vm/html/edit.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-23 10:57:59,342 - ResourceManager : found templates/vm/sql/sql.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 16:38:56,419 - Log4JLogChute initialized using file 'velocity.log'
+2019-07-30 16:38:56,420 - Initializing Velocity, Calling init()...
+2019-07-30 16:38:56,420 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-07-30 16:38:56,420 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-07-30 16:38:56,420 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-07-30 16:38:56,420 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/Priority).  Falling back to next log system...
+2019-07-30 16:38:56,420 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-07-30 16:38:56,420 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-07-30 16:38:56,439 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 16:38:56,474 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-07-30 16:38:56,483 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-07-30 16:38:56,488 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-07-30 16:38:56,490 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-07-30 16:38:56,492 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-07-30 16:38:56,494 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-07-30 16:38:56,496 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-07-30 16:38:56,501 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-07-30 16:38:56,504 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-07-30 16:38:56,508 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-07-30 16:38:56,609 - Created '20' parsers.
+2019-07-30 16:38:56,615 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-07-30 16:38:56,619 - Could not load resource 'VM_global_library.vm' from ResourceLoader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader: ClasspathResourceLoader Error: cannot find resource VM_global_library.vm
+2019-07-30 16:38:56,619 - Velocimacro : Default library not found.
+2019-07-30 16:38:56,619 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-07-30 16:38:56,619 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-07-30 16:38:56,619 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-07-30 16:38:56,619 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-07-30 16:38:56,641 - ResourceManager : found templates/vm/java/domain.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 16:38:56,662 - ResourceManager : found templates/vm/java/Mapper.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 16:38:56,664 - ResourceManager : found templates/vm/java/Service.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 16:38:56,677 - ResourceManager : found templates/vm/java/ServiceImpl.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 16:38:56,691 - ResourceManager : found templates/vm/java/Controller.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 16:38:56,701 - ResourceManager : found templates/vm/xml/Mapper.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 16:38:56,712 - Left side ($primaryKey.extra) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 31, column 89]
+2019-07-30 16:38:56,712 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 35, column 73]
+2019-07-30 16:38:56,716 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 42, column 73]
+2019-07-30 16:38:56,725 - ResourceManager : found templates/vm/html/list.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 16:38:56,728 - ResourceManager : found templates/vm/html/add.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 16:38:56,740 - ResourceManager : found templates/vm/html/edit.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 16:38:56,742 - ResourceManager : found templates/vm/sql/sql.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 19:46:13,759 - Log4JLogChute initialized using file 'velocity.log'
+2019-07-30 19:46:13,760 - Initializing Velocity, Calling init()...
+2019-07-30 19:46:13,760 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-07-30 19:46:13,760 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-07-30 19:46:13,760 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-07-30 19:46:13,760 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/Priority).  Falling back to next log system...
+2019-07-30 19:46:13,760 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-07-30 19:46:13,760 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-07-30 19:46:13,765 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 19:46:13,785 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-07-30 19:46:13,790 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-07-30 19:46:13,792 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-07-30 19:46:13,792 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-07-30 19:46:13,794 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-07-30 19:46:13,795 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-07-30 19:46:13,796 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-07-30 19:46:13,802 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-07-30 19:46:13,802 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-07-30 19:46:13,804 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-07-30 19:46:13,832 - Created '20' parsers.
+2019-07-30 19:46:13,837 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-07-30 19:46:13,842 - Could not load resource 'VM_global_library.vm' from ResourceLoader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader: ClasspathResourceLoader Error: cannot find resource VM_global_library.vm
+2019-07-30 19:46:13,842 - Velocimacro : Default library not found.
+2019-07-30 19:46:13,842 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-07-30 19:46:13,842 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-07-30 19:46:13,842 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-07-30 19:46:13,842 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-07-30 19:46:13,872 - ResourceManager : found templates/vm/java/domain.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 19:46:13,903 - ResourceManager : found templates/vm/java/Mapper.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 19:46:13,910 - ResourceManager : found templates/vm/java/Service.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 19:46:13,916 - ResourceManager : found templates/vm/java/ServiceImpl.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 19:46:13,921 - ResourceManager : found templates/vm/java/Controller.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 19:46:13,939 - ResourceManager : found templates/vm/xml/Mapper.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 19:46:13,961 - Left side ($primaryKey.extra) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 31, column 89]
+2019-07-30 19:46:13,962 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 35, column 73]
+2019-07-30 19:46:13,962 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 42, column 73]
+2019-07-30 19:46:13,978 - ResourceManager : found templates/vm/html/list.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 19:46:13,990 - ResourceManager : found templates/vm/html/add.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 19:46:14,001 - ResourceManager : found templates/vm/html/edit.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 19:46:14,002 - ResourceManager : found templates/vm/sql/sql.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 19:46:14,250 - ResourceManager : found templates/vm/java/domain.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 19:46:14,253 - ResourceManager : found templates/vm/java/Mapper.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 19:46:14,256 - ResourceManager : found templates/vm/java/Service.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 19:46:14,257 - ResourceManager : found templates/vm/java/ServiceImpl.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 19:46:14,258 - ResourceManager : found templates/vm/java/Controller.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 19:46:14,260 - ResourceManager : found templates/vm/xml/Mapper.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 19:46:14,260 - Left side ($primaryKey.extra) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 31, column 89]
+2019-07-30 19:46:14,260 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 35, column 73]
+2019-07-30 19:46:14,260 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 42, column 73]
+2019-07-30 19:46:14,263 - ResourceManager : found templates/vm/html/list.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 19:46:14,265 - ResourceManager : found templates/vm/html/add.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 19:46:14,267 - ResourceManager : found templates/vm/html/edit.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-30 19:46:14,267 - ResourceManager : found templates/vm/sql/sql.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-31 11:39:14,979 - Log4JLogChute initialized using file 'velocity.log'
+2019-07-31 11:39:14,980 - Initializing Velocity, Calling init()...
+2019-07-31 11:39:14,980 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-07-31 11:39:14,980 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-07-31 11:39:14,980 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-07-31 11:39:14,980 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/Priority).  Falling back to next log system...
+2019-07-31 11:39:14,980 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-07-31 11:39:14,980 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-07-31 11:39:14,984 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-31 11:39:15,014 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-07-31 11:39:15,017 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-07-31 11:39:15,020 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-07-31 11:39:15,021 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-07-31 11:39:15,025 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-07-31 11:39:15,027 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-07-31 11:39:15,028 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-07-31 11:39:15,029 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-07-31 11:39:15,030 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-07-31 11:39:15,031 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-07-31 11:39:15,049 - Created '20' parsers.
+2019-07-31 11:39:15,057 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-07-31 11:39:15,067 - Could not load resource 'VM_global_library.vm' from ResourceLoader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader: ClasspathResourceLoader Error: cannot find resource VM_global_library.vm
+2019-07-31 11:39:15,067 - Velocimacro : Default library not found.
+2019-07-31 11:39:15,067 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-07-31 11:39:15,068 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-07-31 11:39:15,068 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-07-31 11:39:15,068 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-07-31 11:39:15,093 - ResourceManager : found templates/vm/java/domain.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-31 11:39:15,120 - ResourceManager : found templates/vm/java/Mapper.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-31 11:39:15,124 - ResourceManager : found templates/vm/java/Service.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-31 11:39:15,126 - ResourceManager : found templates/vm/java/ServiceImpl.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-31 11:39:15,132 - ResourceManager : found templates/vm/java/Controller.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-31 11:39:15,143 - ResourceManager : found templates/vm/xml/Mapper.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-31 11:39:15,155 - Left side ($primaryKey.extra) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 31, column 89]
+2019-07-31 11:39:15,156 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 35, column 73]
+2019-07-31 11:39:15,160 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 42, column 73]
+2019-07-31 11:39:15,171 - ResourceManager : found templates/vm/html/list.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-31 11:39:15,177 - ResourceManager : found templates/vm/html/add.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-31 11:39:15,179 - ResourceManager : found templates/vm/html/edit.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-31 11:39:15,180 - ResourceManager : found templates/vm/sql/sql.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-31 11:39:15,332 - ResourceManager : found templates/vm/java/domain.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-31 11:39:15,335 - ResourceManager : found templates/vm/java/Mapper.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-31 11:39:15,338 - ResourceManager : found templates/vm/java/Service.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-31 11:39:15,339 - ResourceManager : found templates/vm/java/ServiceImpl.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-31 11:39:15,340 - ResourceManager : found templates/vm/java/Controller.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-31 11:39:15,343 - ResourceManager : found templates/vm/xml/Mapper.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-31 11:39:15,344 - Left side ($primaryKey.extra) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 31, column 89]
+2019-07-31 11:39:15,344 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 35, column 73]
+2019-07-31 11:39:15,344 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 42, column 73]
+2019-07-31 11:39:15,347 - ResourceManager : found templates/vm/html/list.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-31 11:39:15,348 - ResourceManager : found templates/vm/html/add.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-31 11:39:15,349 - ResourceManager : found templates/vm/html/edit.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-07-31 11:39:15,350 - ResourceManager : found templates/vm/sql/sql.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-02 17:24:54,060 - Log4JLogChute initialized using file 'velocity.log'
+2019-08-02 17:24:54,066 - Initializing Velocity, Calling init()...
+2019-08-02 17:24:54,066 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-08-02 17:24:54,067 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-08-02 17:24:54,067 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-08-02 17:24:54,067 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/Priority).  Falling back to next log system...
+2019-08-02 17:24:54,067 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-08-02 17:24:54,067 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-08-02 17:24:54,079 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-02 17:24:54,139 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-08-02 17:24:54,145 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-08-02 17:24:54,147 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-08-02 17:24:54,147 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-08-02 17:24:54,150 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-08-02 17:24:54,153 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-08-02 17:24:54,153 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-08-02 17:24:54,158 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-08-02 17:24:54,159 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-08-02 17:24:54,160 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-08-02 17:24:54,192 - Created '20' parsers.
+2019-08-02 17:24:54,198 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-08-02 17:24:54,205 - Could not load resource 'VM_global_library.vm' from ResourceLoader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader: ClasspathResourceLoader Error: cannot find resource VM_global_library.vm
+2019-08-02 17:24:54,206 - Velocimacro : Default library not found.
+2019-08-02 17:24:54,206 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-08-02 17:24:54,206 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-08-02 17:24:54,206 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-08-02 17:24:54,206 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-08-02 17:24:54,291 - ResourceManager : found templates/vm/java/domain.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-02 17:24:54,353 - ResourceManager : found templates/vm/java/Mapper.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-02 17:24:54,359 - ResourceManager : found templates/vm/java/Service.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-02 17:24:54,366 - ResourceManager : found templates/vm/java/ServiceImpl.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-02 17:24:54,373 - ResourceManager : found templates/vm/java/Controller.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-02 17:24:54,389 - ResourceManager : found templates/vm/xml/Mapper.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-02 17:24:54,423 - Left side ($primaryKey.extra) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 31, column 89]
+2019-08-02 17:24:54,423 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 35, column 73]
+2019-08-02 17:24:54,424 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 42, column 73]
+2019-08-02 17:24:54,429 - ResourceManager : found templates/vm/html/list.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-02 17:24:54,434 - ResourceManager : found templates/vm/html/add.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-02 17:24:54,440 - ResourceManager : found templates/vm/html/edit.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-02 17:24:54,441 - ResourceManager : found templates/vm/sql/sql.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-02 20:02:18,372 - Log4JLogChute initialized using file 'velocity.log'
+2019-08-02 20:02:18,373 - Initializing Velocity, Calling init()...
+2019-08-02 20:02:18,373 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-08-02 20:02:18,373 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-08-02 20:02:18,373 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-08-02 20:02:18,373 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/Priority).  Falling back to next log system...
+2019-08-02 20:02:18,373 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-08-02 20:02:18,373 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-08-02 20:02:18,389 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-02 20:02:18,442 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-08-02 20:02:18,455 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-08-02 20:02:18,460 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-08-02 20:02:18,463 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-08-02 20:02:18,466 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-08-02 20:02:18,469 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-08-02 20:02:18,472 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-08-02 20:02:18,476 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-08-02 20:02:18,478 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-08-02 20:02:18,481 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-08-02 20:02:18,564 - Created '20' parsers.
+2019-08-02 20:02:18,578 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-08-02 20:02:18,582 - Could not load resource 'VM_global_library.vm' from ResourceLoader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader: ClasspathResourceLoader Error: cannot find resource VM_global_library.vm
+2019-08-02 20:02:18,582 - Velocimacro : Default library not found.
+2019-08-02 20:02:18,582 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-08-02 20:02:18,582 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-08-02 20:02:18,582 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-08-02 20:02:18,582 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-08-02 20:02:18,612 - ResourceManager : found templates/vm/java/domain.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-02 20:02:18,674 - ResourceManager : found templates/vm/java/Mapper.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-02 20:02:18,698 - ResourceManager : found templates/vm/java/Service.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-02 20:02:18,719 - ResourceManager : found templates/vm/java/ServiceImpl.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-02 20:02:18,754 - ResourceManager : found templates/vm/java/Controller.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-02 20:02:18,781 - ResourceManager : found templates/vm/xml/Mapper.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-02 20:02:18,844 - Left side ($primaryKey.extra) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 31, column 89]
+2019-08-02 20:02:18,844 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 35, column 73]
+2019-08-02 20:02:18,845 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 42, column 73]
+2019-08-02 20:02:18,862 - ResourceManager : found templates/vm/html/list.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-02 20:02:18,873 - ResourceManager : found templates/vm/html/add.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-02 20:02:18,888 - ResourceManager : found templates/vm/html/edit.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-02 20:02:18,893 - ResourceManager : found templates/vm/sql/sql.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-04 01:20:03,426 - Log4JLogChute initialized using file 'velocity.log'
+2019-08-04 01:20:03,428 - Initializing Velocity, Calling init()...
+2019-08-04 01:20:03,428 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-08-04 01:20:03,428 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-08-04 01:20:03,428 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-08-04 01:20:03,428 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/Priority).  Falling back to next log system...
+2019-08-04 01:20:03,428 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-08-04 01:20:03,428 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-08-04 01:20:03,434 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-04 01:20:03,451 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-08-04 01:20:03,456 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-08-04 01:20:03,457 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-08-04 01:20:03,458 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-08-04 01:20:03,460 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-08-04 01:20:03,460 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-08-04 01:20:03,462 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-08-04 01:20:03,465 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-08-04 01:20:03,466 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-08-04 01:20:03,467 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-08-04 01:20:03,480 - Created '20' parsers.
+2019-08-04 01:20:03,483 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-08-04 01:20:03,486 - Could not load resource 'VM_global_library.vm' from ResourceLoader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader: ClasspathResourceLoader Error: cannot find resource VM_global_library.vm
+2019-08-04 01:20:03,486 - Velocimacro : Default library not found.
+2019-08-04 01:20:03,486 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-08-04 01:20:03,487 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-08-04 01:20:03,487 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-08-04 01:20:03,487 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-08-04 01:20:03,511 - ResourceManager : found templates/vm/java/domain.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-04 01:20:03,542 - ResourceManager : found templates/vm/java/Mapper.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-04 01:20:03,548 - ResourceManager : found templates/vm/java/Service.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-04 01:20:03,550 - ResourceManager : found templates/vm/java/ServiceImpl.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-04 01:20:03,561 - ResourceManager : found templates/vm/java/Controller.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-04 01:20:03,570 - ResourceManager : found templates/vm/xml/Mapper.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-04 01:20:03,589 - Left side ($primaryKey.extra) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 31, column 89]
+2019-08-04 01:20:03,590 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 35, column 73]
+2019-08-04 01:20:03,590 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 42, column 73]
+2019-08-04 01:20:03,601 - ResourceManager : found templates/vm/html/list.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-04 01:20:03,604 - ResourceManager : found templates/vm/html/add.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-04 01:20:03,618 - ResourceManager : found templates/vm/html/edit.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-04 01:20:03,619 - ResourceManager : found templates/vm/sql/sql.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-05 20:51:00,982 - Log4JLogChute initialized using file 'velocity.log'
+2019-08-05 20:51:00,982 - Initializing Velocity, Calling init()...
+2019-08-05 20:51:00,982 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-08-05 20:51:00,982 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-08-05 20:51:00,983 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-08-05 20:51:00,983 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/Priority).  Falling back to next log system...
+2019-08-05 20:51:00,983 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-08-05 20:51:00,983 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-08-05 20:51:00,987 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-05 20:51:01,009 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-08-05 20:51:01,011 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-08-05 20:51:01,013 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-08-05 20:51:01,014 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-08-05 20:51:01,016 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-08-05 20:51:01,020 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-08-05 20:51:01,021 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-08-05 20:51:01,023 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-08-05 20:51:01,023 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-08-05 20:51:01,025 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-08-05 20:51:01,044 - Created '20' parsers.
+2019-08-05 20:51:01,050 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-08-05 20:51:01,052 - Could not load resource 'VM_global_library.vm' from ResourceLoader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader: ClasspathResourceLoader Error: cannot find resource VM_global_library.vm
+2019-08-05 20:51:01,053 - Velocimacro : Default library not found.
+2019-08-05 20:51:01,053 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-08-05 20:51:01,053 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-08-05 20:51:01,053 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-08-05 20:51:01,053 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-08-05 20:51:01,079 - ResourceManager : found templates/vm/java/domain.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-05 20:51:01,106 - ResourceManager : found templates/vm/java/Mapper.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-05 20:51:01,116 - ResourceManager : found templates/vm/java/Service.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-05 20:51:01,121 - ResourceManager : found templates/vm/java/ServiceImpl.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-05 20:51:01,128 - ResourceManager : found templates/vm/java/Controller.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-05 20:51:01,141 - ResourceManager : found templates/vm/xml/Mapper.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-05 20:51:01,168 - Left side ($primaryKey.extra) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 31, column 89]
+2019-08-05 20:51:01,169 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 35, column 73]
+2019-08-05 20:51:01,169 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 42, column 73]
+2019-08-05 20:51:01,179 - ResourceManager : found templates/vm/html/list.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-05 20:51:01,183 - ResourceManager : found templates/vm/html/add.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-05 20:51:01,194 - ResourceManager : found templates/vm/html/edit.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-05 20:51:01,196 - ResourceManager : found templates/vm/sql/sql.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-06 11:25:49,050 - Log4JLogChute initialized using file 'velocity.log'
+2019-08-06 11:25:49,050 - Initializing Velocity, Calling init()...
+2019-08-06 11:25:49,051 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-08-06 11:25:49,051 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-08-06 11:25:49,051 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-08-06 11:25:49,051 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/Priority).  Falling back to next log system...
+2019-08-06 11:25:49,051 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-08-06 11:25:49,051 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-08-06 11:25:49,087 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-06 11:25:49,106 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-08-06 11:25:49,112 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-08-06 11:25:49,114 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-08-06 11:25:49,114 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-08-06 11:25:49,116 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-08-06 11:25:49,117 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-08-06 11:25:49,119 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-08-06 11:25:49,121 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-08-06 11:25:49,122 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-08-06 11:25:49,123 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-08-06 11:25:49,149 - Created '20' parsers.
+2019-08-06 11:25:49,153 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-08-06 11:25:49,156 - Could not load resource 'VM_global_library.vm' from ResourceLoader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader: ClasspathResourceLoader Error: cannot find resource VM_global_library.vm
+2019-08-06 11:25:49,157 - Velocimacro : Default library not found.
+2019-08-06 11:25:49,157 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-08-06 11:25:49,157 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-08-06 11:25:49,157 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-08-06 11:25:49,157 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-08-06 11:25:49,200 - ResourceManager : found templates/vm/java/domain.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-06 11:25:49,232 - ResourceManager : found templates/vm/java/Mapper.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-06 11:25:49,235 - ResourceManager : found templates/vm/java/Service.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-06 11:25:49,239 - ResourceManager : found templates/vm/java/ServiceImpl.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-06 11:25:49,243 - ResourceManager : found templates/vm/java/Controller.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-06 11:25:49,261 - ResourceManager : found templates/vm/xml/Mapper.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-06 11:25:49,275 - Left side ($primaryKey.extra) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 31, column 89]
+2019-08-06 11:25:49,275 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 35, column 73]
+2019-08-06 11:25:49,276 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 42, column 73]
+2019-08-06 11:25:49,292 - ResourceManager : found templates/vm/html/list.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-06 11:25:49,296 - ResourceManager : found templates/vm/html/add.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-06 11:25:49,299 - ResourceManager : found templates/vm/html/edit.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-06 11:25:49,302 - ResourceManager : found templates/vm/sql/sql.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-07 10:48:32,888 - Log4JLogChute initialized using file 'velocity.log'
+2019-08-07 10:48:32,889 - Initializing Velocity, Calling init()...
+2019-08-07 10:48:32,889 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-08-07 10:48:32,889 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-08-07 10:48:32,889 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-08-07 10:48:32,889 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/Priority).  Falling back to next log system...
+2019-08-07 10:48:32,889 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-08-07 10:48:32,890 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-08-07 10:48:32,895 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-07 10:48:32,909 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-08-07 10:48:32,913 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-08-07 10:48:32,917 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-08-07 10:48:32,918 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-08-07 10:48:32,920 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-08-07 10:48:32,926 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-08-07 10:48:32,928 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-08-07 10:48:32,930 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-08-07 10:48:32,930 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-08-07 10:48:32,933 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-08-07 10:48:32,949 - Created '20' parsers.
+2019-08-07 10:48:32,953 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-08-07 10:48:32,959 - Could not load resource 'VM_global_library.vm' from ResourceLoader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader: ClasspathResourceLoader Error: cannot find resource VM_global_library.vm
+2019-08-07 10:48:32,959 - Velocimacro : Default library not found.
+2019-08-07 10:48:32,960 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-08-07 10:48:32,960 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-08-07 10:48:32,960 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-08-07 10:48:32,960 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-08-07 10:48:32,982 - ResourceManager : found templates/vm/java/domain.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-07 10:48:33,014 - ResourceManager : found templates/vm/java/Mapper.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-07 10:48:33,017 - ResourceManager : found templates/vm/java/Service.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-07 10:48:33,020 - ResourceManager : found templates/vm/java/ServiceImpl.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-07 10:48:33,024 - ResourceManager : found templates/vm/java/Controller.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-07 10:48:33,044 - ResourceManager : found templates/vm/xml/Mapper.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-07 10:48:33,061 - Left side ($primaryKey.extra) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 31, column 89]
+2019-08-07 10:48:33,061 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 35, column 73]
+2019-08-07 10:48:33,061 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 42, column 73]
+2019-08-07 10:48:33,066 - ResourceManager : found templates/vm/html/list.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-07 10:48:33,069 - ResourceManager : found templates/vm/html/add.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-07 10:48:33,073 - ResourceManager : found templates/vm/html/edit.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-07 10:48:33,075 - ResourceManager : found templates/vm/sql/sql.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-07 14:46:31,889 - Log4JLogChute initialized using file 'velocity.log'
+2019-08-07 14:46:31,891 - Initializing Velocity, Calling init()...
+2019-08-07 14:46:31,891 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-08-07 14:46:31,891 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-08-07 14:46:31,891 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-08-07 14:46:31,891 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/Priority).  Falling back to next log system...
+2019-08-07 14:46:31,891 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-08-07 14:46:31,891 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-08-07 14:46:31,895 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-07 14:46:31,912 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-08-07 14:46:31,920 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-08-07 14:46:31,922 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-08-07 14:46:31,922 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-08-07 14:46:31,923 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-08-07 14:46:31,924 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-08-07 14:46:31,925 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-08-07 14:46:31,930 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-08-07 14:46:31,933 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-08-07 14:46:31,935 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-08-07 14:46:31,958 - Created '20' parsers.
+2019-08-07 14:46:31,964 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-08-07 14:46:31,966 - Could not load resource 'VM_global_library.vm' from ResourceLoader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader: ClasspathResourceLoader Error: cannot find resource VM_global_library.vm
+2019-08-07 14:46:31,966 - Velocimacro : Default library not found.
+2019-08-07 14:46:31,966 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-08-07 14:46:31,966 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-08-07 14:46:31,966 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-08-07 14:46:31,966 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-08-07 14:46:31,982 - ResourceManager : found templates/vm/java/domain.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-07 14:46:31,999 - ResourceManager : found templates/vm/java/Mapper.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-07 14:46:32,000 - ResourceManager : found templates/vm/java/Service.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-07 14:46:32,003 - ResourceManager : found templates/vm/java/ServiceImpl.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-07 14:46:32,006 - ResourceManager : found templates/vm/java/Controller.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-07 14:46:32,012 - ResourceManager : found templates/vm/xml/Mapper.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-07 14:46:32,019 - Left side ($primaryKey.extra) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 31, column 89]
+2019-08-07 14:46:32,019 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 35, column 73]
+2019-08-07 14:46:32,020 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 42, column 73]
+2019-08-07 14:46:32,025 - ResourceManager : found templates/vm/html/list.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-07 14:46:32,029 - ResourceManager : found templates/vm/html/add.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-07 14:46:32,032 - ResourceManager : found templates/vm/html/edit.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-07 14:46:32,033 - ResourceManager : found templates/vm/sql/sql.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-09 15:16:18,927 - Log4JLogChute initialized using file 'velocity.log'
+2019-08-09 15:16:18,931 - Initializing Velocity, Calling init()...
+2019-08-09 15:16:18,931 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-08-09 15:16:18,931 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-08-09 15:16:18,931 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-08-09 15:16:18,931 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/Priority).  Falling back to next log system...
+2019-08-09 15:16:18,931 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-08-09 15:16:18,931 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-08-09 15:16:18,937 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-09 15:16:18,962 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-08-09 15:16:18,965 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-08-09 15:16:18,967 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-08-09 15:16:18,967 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-08-09 15:16:18,968 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-08-09 15:16:18,969 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-08-09 15:16:18,969 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-08-09 15:16:19,212 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-08-09 15:16:19,214 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-08-09 15:16:19,216 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-08-09 15:16:19,244 - Created '20' parsers.
+2019-08-09 15:16:19,247 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-08-09 15:16:19,252 - Could not load resource 'VM_global_library.vm' from ResourceLoader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader: ClasspathResourceLoader Error: cannot find resource VM_global_library.vm
+2019-08-09 15:16:19,252 - Velocimacro : Default library not found.
+2019-08-09 15:16:19,252 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-08-09 15:16:19,252 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-08-09 15:16:19,252 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-08-09 15:16:19,252 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-08-09 15:16:19,285 - ResourceManager : found templates/vm/java/domain.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-09 15:16:19,308 - ResourceManager : found templates/vm/java/Mapper.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-09 15:16:19,311 - ResourceManager : found templates/vm/java/Service.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-09 15:16:19,315 - ResourceManager : found templates/vm/java/ServiceImpl.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-09 15:16:19,317 - ResourceManager : found templates/vm/java/Controller.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-09 15:16:19,323 - ResourceManager : found templates/vm/xml/Mapper.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-09 15:16:19,337 - Left side ($primaryKey.extra) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 31, column 89]
+2019-08-09 15:16:19,337 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 35, column 73]
+2019-08-09 15:16:19,338 - Left side ($primaryKey.extra) of '!=' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. templates/vm/xml/Mapper.xml.vm[line 42, column 73]
+2019-08-09 15:16:19,347 - ResourceManager : found templates/vm/html/list.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-09 15:16:19,353 - ResourceManager : found templates/vm/html/add.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-09 15:16:19,357 - ResourceManager : found templates/vm/html/edit.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2019-08-09 15:16:19,361 - ResourceManager : found templates/vm/sql/sql.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader

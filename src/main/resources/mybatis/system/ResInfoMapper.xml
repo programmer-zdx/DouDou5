@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aaa.project.system.resInfo.mapper.ResInfoMapper">
+    
+    <resultMap type="ResInfo" id="ResInfoResult">
+        <result property="resId"    column="res_id"    />
+        <result property="resSernum"    column="res_sernum"    />
+        <result property="sitename"    column="sitename"    />
+        <result property="areaCity"    column="area_city"    />
+        <result property="longandlat"    column="longandlat"    />
+        <result property="resContinue"    column="res_continue"    />
+        <result property="resState"    column="res_state"    />
+        <result property="state"    column="state"    />
+    </resultMap>
+	
+	<sql id="selectResInfoVo">
+        select res_id, res_sernum, sitename, area_city, longandlat, res_continue, res_state, status from hn_res_info
+    </sql>
+	
+    <select id="selectResInfoList" parameterType="ResInfo" resultMap="ResInfoResult">
+        <include refid="selectResInfoVo"/>
+        <where>  
+            <if test="resId != null "> and res_id = #{resId}</if>
+             <if test="resSernum != null  and resSernum != '' "> and res_sernum = #{resSernum}</if>
+             <if test="sitename != null  and sitename != '' "> and sitename = #{sitename}</if>
+             <if test="areaCity != null  and areaCity != '' "> and area_city = #{areaCity}</if>
+             <if test="longandlat != null  and longandlat != '' "> and longandlat = #{longandlat}</if>
+             <if test="resContinue != null "> and res_continue = #{resContinue}</if>
+             <if test="resState != null  and resState != '' "> and res_state = #{resState}</if>
+         </where>
+    </select>
+    
+    <select id="selectResInfoById" parameterType="Integer" resultMap="ResInfoResult">
+        <include refid="selectResInfoVo"/>
+        where res_id = #{resId}
+    </select>
+        
+    <insert id="insertResInfo" parameterType="ResInfo">
+        insert ignore into hn_res_info
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="resId != null  ">res_id,</if>
+			<if test="resSernum != null  and resSernum != ''  ">res_sernum,</if>
+			<if test="sitename != null  and sitename != ''  ">sitename,</if>
+			<if test="areaCity != null  and areaCity != ''  ">area_city,</if>
+			<if test="longandlat != null  and longandlat != ''  ">longandlat,</if>
+			<if test="resContinue != null  ">res_continue,</if>
+			<if test="resState != null  and resState != ''  ">res_state,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="resId != null  ">#{resId},</if>
+			<if test="resSernum != null  and resSernum != ''  ">#{resSernum},</if>
+			<if test="sitename != null  and sitename != ''  ">#{sitename},</if>
+			<if test="areaCity != null  and areaCity != ''  ">#{areaCity},</if>
+			<if test="longandlat != null  and longandlat != ''  ">#{longandlat},</if>
+			<if test="resContinue != null  ">#{resContinue},</if>
+			<if test="resState != null  and resState != ''  ">#{resState},</if>
+         </trim>
+    </insert>
+	 
+    <update id="updateResInfo" parameterType="ResInfo">
+        update hn_res_info
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="resSernum != null  and resSernum != ''  ">res_sernum = #{resSernum},</if>
+            <if test="sitename != null  and sitename != ''  ">sitename = #{sitename},</if>
+            <if test="areaCity != null  and areaCity != ''  ">area_city = #{areaCity},</if>
+            <if test="longandlat != null  and longandlat != ''  ">longandlat = #{longandlat},</if>
+            <if test="resContinue != null  ">res_continue = #{resContinue},</if>
+            <if test="resState != null  and resState != ''  ">res_state = #{resState},</if>
+        </trim>
+        where res_id = #{resId}
+    </update>
+
+	<delete id="deleteResInfoById" parameterType="Integer">
+        delete from hn_res_info where res_id = #{resId}
+    </delete>
+	
+    <delete id="deleteResInfoByIds" parameterType="String">
+        delete from hn_res_info where res_id in 
+        <foreach item="resId" collection="array" open="(" separator="," close=")">
+            #{resId}
+        </foreach>
+    </delete>
+
+    <update id="updateStatus" parameterType="ResInfo">
+        update hn_res_info set status=#{status} where res_id=#{resId}
+    </update>
+</mapper>

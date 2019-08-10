@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aaa.project.system.standardInfo.mapper.StandardInfoMapper">
+    
+    <resultMap type="StandardInfo" id="StandardInfoResult">
+        <result property="standardId"    column="standard_id"    />
+        <result property="stpoId"    column="stpo_id"    />
+        <result property="standardName"    column="standard_name"    />
+        <result property="standardQuality"    column="standard_quality"    />
+        <result property="standardCycle"    column="standard_cycle"    />
+    </resultMap>
+	
+	<sql id="selectStandardInfoVo">
+        select standard_id, stpo_id, standard_name, standard_quality, standard_cycle from hn_standard_info
+    </sql>
+	
+    <select id="selectStandardInfoList" parameterType="StandardInfo" resultMap="StandardInfoResult">
+        <include refid="selectStandardInfoVo"/>
+        <where>  
+            <if test="standardId != null "> and standard_id = #{standardId}</if>
+             <if test="stpoId != null "> and stpo_id = #{stpoId}</if>
+             <if test="standardName != null  and standardName != '' "> and standard_name = #{standardName}</if>
+             <if test="standardQuality != null  and standardQuality != '' "> and standard_quality = #{standardQuality}</if>
+             <if test="standardCycle != null  and standardCycle != '' "> and standard_cycle = #{standardCycle}</if>
+         </where>
+    </select>
+    
+    <select id="selectStandardInfoById" parameterType="Integer" resultMap="StandardInfoResult">
+        <include refid="selectStandardInfoVo"/>
+        where standard_id = #{standardId}
+    </select>
+
+    <insert id="insertPlanInfo" parameterType="PlanInfo">
+        insert ignore into hn_plan_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="planId != null  ">plan_id,</if>
+            <if test="planName != null  and planName != ''  ">plan_name,</if>
+            <if test="resId != null  ">res_id,</if>
+            <if test="stpoId != null  ">stpo_id,</if>
+            <if test="starttime != null  ">starttime,</if>
+            <if test="endtime != null  ">endtime,</if>
+            <if test="planState != null  and planState != ''  ">plan_state,</if>
+            <if test="checkResult != null  and checkResult != ''  ">check_result,</if>
+            <if test="templateId != null  ">template_id,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="planId != null  ">#{planId},</if>
+            <if test="planName != null  and planName != ''  ">#{planName},</if>
+            <if test="resId != null  ">#{resId},</if>
+            <if test="stpoId != null  ">#{stpoId},</if>
+            <if test="starttime != null  ">#{starttime},</if>
+            <if test="endtime != null  ">#{endtime},</if>
+            <if test="planState != null  and planState != ''  ">#{planState},</if>
+            <if test="checkResult != null  and checkResult != ''  ">#{checkResult},</if>
+            <if test="templateId != null  ">#{templateId},</if>
+        </trim>
+    </insert>
+	 
+    <update id="updateStandardInfo" parameterType="StandardInfo">
+        update hn_standard_info
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="stpoId != null  ">stpo_id = #{stpoId},</if>
+            <if test="standardName != null  and standardName != ''  ">standard_name = #{standardName},</if>
+            <if test="standardQuality != null  and standardQuality != ''  ">standard_quality = #{standardQuality},</if>
+            <if test="standardCycle != null  and standardCycle != ''  ">standard_cycle = #{standardCycle},</if>
+        </trim>
+        where standard_id = #{standardId}
+    </update>
+
+	<delete id="deleteStandardInfoById" parameterType="Integer">
+        delete from hn_standard_info where standard_id = #{standardId}
+    </delete>
+	
+    <delete id="deleteStandardInfoByIds" parameterType="String">
+        delete from hn_standard_info where standard_id in 
+        <foreach item="standardId" collection="array" open="(" separator="," close=")">
+            #{standardId}
+        </foreach>
+    </delete>
+    
+</mapper>

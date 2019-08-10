@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aaa.project.system.statInfo.mapper.StatInfoMapper">
+    
+    <resultMap type="StatInfo" id="StatInfoResult">
+        <result property="statId"    column="stat_id"    />
+        <result property="companyId"    column="company_id"    />
+        <result property="stpoId"    column="stpo_id"    />
+        <result property="type"    column="type"    />
+        <result property="companyName"    column="company_name"    />
+        <result property="stpoName"    column="stpo_name"    />
+    </resultMap>
+	
+	<sql id="selectStatInfoVo">
+        select * from ( select s.stat_id,c.company_name,st.stpo_name,s.type from hn_stat_info s,hn_company_info c,hn_stpo_info st
+        where s.company_id=c.company_id and s.stpo_id=st.stpo_id ) static
+    </sql>
+
+    <select id="selectStatInfoList" parameterType="StatInfo" resultMap="StatInfoResult">
+        <include refid="selectStatInfoVo"/>
+        <where>  
+            <if test="statId != null "> and stat_id = #{statId}</if>
+             <if test="companyId != null "> and company_id = #{companyId}</if>
+             <if test="stpoId != null "> and stpo_id = #{stpoId}</if>
+             <if test="type != null  and type != '' "> and type = #{type}</if>
+         </where>
+    </select>
+    
+    <select id="selectStatInfoById" parameterType="Integer" resultMap="StatInfoResult">
+        <include refid="selectStatInfoVo"/>
+        where stat_id = #{statId}
+    </select>
+        
+    <insert id="insertStatInfo" parameterType="StatInfo">
+        insert into hn_stat_info
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="statId != null  ">stat_id,</if>
+			<if test="companyId != null  ">company_id,</if>
+			<if test="stpoId != null  ">stpo_id,</if>
+			<if test="type != null  and type != ''  ">type,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="statId != null  ">#{statId},</if>
+			<if test="companyId != null  ">#{companyId},</if>
+			<if test="stpoId != null  ">#{stpoId},</if>
+			<if test="type != null  and type != ''  ">#{type},</if>
+         </trim>
+    </insert>
+	 
+    <update id="updateStatInfo" parameterType="StatInfo">
+        update hn_stat_info
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="companyId != null  ">company_id = #{companyId},</if>
+            <if test="stpoId != null  ">stpo_id = #{stpoId},</if>
+            <if test="type != null  and type != ''  ">type = #{type},</if>
+        </trim>
+        where stat_id = #{statId}
+    </update>
+
+	<delete id="deleteStatInfoById" parameterType="Integer">
+        delete from hn_stat_info where stat_id = #{statId}
+    </delete>
+	
+    <delete id="deleteStatInfoByIds" parameterType="String">
+        delete from hn_stat_info where stat_id in 
+        <foreach item="statId" collection="array" open="(" separator="," close=")">
+            #{statId}
+        </foreach>
+    </delete>
+    
+</mapper>

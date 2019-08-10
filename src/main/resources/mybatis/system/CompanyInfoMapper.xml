@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aaa.project.system.companyInfo.mapper.CompanyInfoMapper">
+    
+    <resultMap type="CompanyInfo" id="CompanyInfoResult">
+        <result property="companyId"    column="company_id"    />
+        <result property="companyName"    column="company_name"    />
+        <!--<result property="areaId"    column="area_id"    />-->
+        <result property="cityname" column="cityname"/>
+    </resultMap>
+	
+	<sql id="selectCompanyInfoVo">
+       SELECT  * FROM (SELECT
+            c.company_id,
+            c.company_name,
+            a.cityname
+        FROM
+            hn_company_info c,
+            hn_area_info a
+        WHERE
+	c.area_id = a.area_id)a
+    </sql>
+	
+    <select id="selectCompanyInfoList" parameterType="CompanyInfo" resultMap="CompanyInfoResult">
+        <include refid="selectCompanyInfoVo"/>
+        <where>
+            <if test="companyId != null "> and company_id = #{companyId}</if>
+             <if test="companyName != null  and companyName != '' "> and company_name = #{companyName}</if>
+             <if test="areaId != null "> and area_id = #{areaId}</if>
+         </where>
+    </select>
+    
+    <select id="selectCompanyInfoById" parameterType="Integer" resultMap="CompanyInfoResult">
+        <include refid="selectCompanyInfoVo"/>
+        where company_id = #{companyId}
+    </select>
+        
+    <insert id="insertCompanyInfo" parameterType="CompanyInfo">
+        insert into hn_company_info
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="companyId != null  ">company_id,</if>
+			<if test="companyName != null  and companyName != ''  ">company_name,</if>
+			<if test="areaId != null">area_id,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="companyId != null  ">#{companyId},</if>
+			<if test="companyName != null  and companyName != ''  ">#{companyName},</if>
+			<if test="areaId != null  ">#{areaId},</if>
+         </trim>
+    </insert>
+	 
+    <update id="updateCompanyInfo" parameterType="CompanyInfo">
+        update hn_company_info
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="companyName != null  and companyName != ''  ">company_name = #{companyName},</if>
+            <if test="areaId != null  ">area_id = #{areaId},</if>
+        </trim>
+        where company_id = #{companyId}
+    </update>
+
+	<delete id="deleteCompanyInfoById" parameterType="Integer">
+        delete from hn_company_info where company_id = #{companyId}
+    </delete>
+	
+    <delete id="deleteCompanyInfoByIds" parameterType="String">
+        delete from hn_company_info where company_id in 
+        <foreach item="companyId" collection="array" open="(" separator="," close=")">
+            #{companyId}
+        </foreach>
+    </delete>
+    
+</mapper>

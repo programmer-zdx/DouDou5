@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aaa.project.system.stpoInfo.mapper.StpoInfoMapper">
+    
+    <resultMap type="StpoInfo" id="StpoInfoResult">
+        <result property="stpoId"    column="stpo_id"    />
+        <result property="stpoName"    column="stpo_name"    />
+        <result property="stpoAddress"    column="stpo_address"    />
+        <result property="companyId"    column="company_id"    />
+        <result property="inspectId"    column="inspect_id"    />
+        <result property="inspectName"    column="inspect_name"    />
+        <result property="companyName"    column="company_name"    />
+    </resultMap>
+	
+	<sql id="selectStpoInfoVo">
+        select * from (select s.stpo_id, stpo_name, stpo_address, s.company_id, s.inspect_id,company_name,inspect_name
+        from hn_stpo_info s,hn_inspect_info i,hn_company_info c
+        where s.company_id=c.company_id and s.inspect_id=i.inspect_id) sic
+    </sql>
+	
+    <select id="selectStpoInfoList" parameterType="StpoInfo" resultMap="StpoInfoResult">
+        <include refid="selectStpoInfoVo"/>
+        <where>  
+            <if test="stpoId != null "> and stpo_id = #{stpoId}</if>
+             <if test="stpoName != null  and stpoName != '' "> and stpo_name = #{stpoName}</if>
+             <if test="stpoAddress != null  and stpoAddress != '' "> and stpo_address = #{stpoAddress}</if>
+             <if test="companyId != null "> and company_id = #{companyId}</if>
+             <if test="inspectId != null "> and inspect_id = #{inspectId}</if>
+         </where>
+    </select>
+    
+    <select id="selectStpoInfoById" parameterType="Integer" resultMap="StpoInfoResult">
+        <include refid="selectStpoInfoVo"/>
+        where stpo_id = #{stpoId}
+    </select>
+        
+    <insert id="insertStpoInfo" parameterType="StpoInfo">
+        insert
+        into hn_stpo_info
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="stpoId != null  ">stpo_id,</if>
+			<if test="stpoName != null  and stpoName != ''  ">stpo_name,</if>
+			<if test="stpoAddress != null  and stpoAddress != ''  ">stpo_address,</if>
+			<if test="companyId != null  ">company_id,</if>
+			<if test="inspectId != null  ">inspect_id,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="stpoId != null  ">#{stpoId},</if>
+			<if test="stpoName != null  and stpoName != ''  ">#{stpoName},</if>
+			<if test="stpoAddress != null  and stpoAddress != ''  ">#{stpoAddress},</if>
+			<if test="companyId != null  ">#{companyId},</if>
+			<if test="inspectId != null  ">#{inspectId},</if>
+         </trim>
+    </insert>
+	 
+    <update id="updateStpoInfo" parameterType="StpoInfo">
+        update hn_stpo_info
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="stpoName != null  and stpoName != ''  ">stpo_name = #{stpoName},</if>
+            <if test="stpoAddress != null  and stpoAddress != ''  ">stpo_address = #{stpoAddress},</if>
+            <if test="companyId != null  ">company_id = #{companyId},</if>
+            <if test="inspectId != null  ">inspect_id = #{inspectId},</if>
+        </trim>
+        where stpo_id = #{stpoId}
+    </update>
+
+	<delete id="deleteStpoInfoById" parameterType="Integer">
+        delete from hn_stpo_info where stpo_id = #{stpoId}
+    </delete>
+	
+    <delete id="deleteStpoInfoByIds" parameterType="String">
+        delete from hn_stpo_info where stpo_id in 
+        <foreach item="stpoId" collection="array" open="(" separator="," close=")">
+            #{stpoId}
+        </foreach>
+    </delete>
+    
+</mapper>

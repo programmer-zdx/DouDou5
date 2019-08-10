@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html  lang="zh" xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8">
+<head th:include="include :: header"></head>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+        <form class="form-horizontal m" id="form-resInfo-edit" th:object="${resInfo}">
+            <input id="resId" name="resId" th:field="*{resId}"  type="hidden">
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">资源点编号：</label>
+				<div class="col-sm-8">
+					<input id="resSernum" name="resSernum" th:field="*{resSernum}" class="form-control" type="text" readonly="readonly">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">站点名称：</label>
+				<div class="col-sm-8">
+					<input id="sitename" name="sitename" th:field="*{sitename}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">资源所在市：</label>
+				<div class="col-sm-8">
+					<input id="areaCity" name="areaCity" th:field="*{areaCity}" class="form-control" type="text" readonly="readonly">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">经纬度：</label>
+				<div class="col-sm-8">
+					<input id="longandlat" name="longandlat" th:field="*{longandlat}" class="form-control" type="text" readonly="readonly">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">入网时间：</label>
+
+				<div class="col-sm-8">
+					<input id="resContinue" name="resContinue" th:field="*{resContinue}" class="form-control" type="text" readonly="readonly">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">分配状态：</label>
+				<div class="col-sm-8">
+					<!--input id="resState" name="resState" th:field="*{resState}" class="form-control" type="text">-->
+					<select id="resState" name="resState" class="form-control">
+						<option value="在网">在网</option>
+						<option value="废弃">废弃</option>
+					</select>
+				</div>
+			</div>
+		</form>
+    </div>
+    <div th:include="include::footer"></div>
+    <script type="text/javascript">
+		var prefix = ctx + "system/resInfo"
+		$("#form-resInfo-edit").validate({
+			rules:{
+				xxxx:{
+					required:true,
+				},
+			}
+		});
+		
+		function submitHandler() {
+	        if ($.validate.form()) {
+	            $.operate.save(prefix + "/edit", $('#form-resInfo-edit').serialize());
+	        }
+	    }
+	</script>
+</body>
+</html>

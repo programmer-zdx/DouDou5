@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html  lang="zh" xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8">
+<head th:include="include :: header"></head>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+        <form class="form-horizontal m" id="form-hidInfo-edit" th:object="${hidInfo}">
+            <input id="hidId" name="hidId" th:field="*{hidId}"  type="hidden">
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">计划id：</label>
+				<div class="col-sm-8">
+					<input id="planId" name="planId" th:field="*{planId}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">资源编号：</label>
+				<div class="col-sm-8">
+					<input id="resId" name="resId" th:field="*{resId}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">隐患描述：</label>
+				<div class="col-sm-8">
+					<input id="hidDescribe" name="hidDescribe" th:field="*{hidDescribe}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">站点名：</label>
+				<div class="col-sm-8">
+					<input id="deptId" name="deptId" th:field="*{deptId}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">严重程度：</label>
+				<div class="col-sm-8">
+					<input id="degree" name="degree" th:field="*{degree}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">巡检人员编号：</label>
+				<div class="col-sm-8">
+					<input id="inspectId" name="inspectId" th:field="*{inspectId}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">巡检日期：</label>
+				<div class="col-sm-8">
+					<input id="inspectDate" name="inspectDate" th:field="*{inspectDate}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">上传图片：</label>
+				<div class="col-sm-8">
+					<input id="pId" name="pId" th:field="*{pId}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">巡检内容：</label>
+				<div class="col-sm-8">
+					<input id="hidCont" name="hidCont" th:field="*{hidCont}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">状态：</label>
+				<div class="col-sm-8">
+					<input id="status" name="status" th:field="*{status}" class="form-control" type="text">
+				</div>
+			</div>
+		</form>
+    </div>
+    <div th:include="include::footer"></div>
+    <script type="text/javascript">
+		var prefix = ctx + "system/hidInfo"
+		$("#form-hidInfo-edit").validate({
+			rules:{
+				xxxx:{
+					required:true,
+				},
+			}
+		});
+		
+		function submitHandler() {
+	        if ($.validate.form()) {
+	            $.operate.save(prefix + "/edit", $('#form-hidInfo-edit').serialize());
+	        }
+	    }
+	</script>
+</body>
+</html>

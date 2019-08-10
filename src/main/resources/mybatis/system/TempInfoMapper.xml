@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aaa.project.system.tempInfo.mapper.TempInfoMapper">
+    
+    <resultMap type="TempInfo" id="TempInfoResult">
+        <result property="tempId"    column="temp_id"    />
+        <result property="tempType"    column="temp_type"    />
+        <result property="standardId"    column="standard_id"    />
+        <result property="tempDescribe"    column="temp_describe"    />
+        <result property="tempTime"    column="temp_time"    />
+    </resultMap>
+	
+	<sql id="selectTempInfoVo">
+        select t.temp_id,t.temp_type,st.stpo_name,t.temp_describe,t.temp_time,s.standard_name,s.standard_quality,s.standard_cycle
+        FROM hn_standard_info s,hn_temp_info t,hn_stpo_info st
+         WHERE  s.standard_id = t.standard_id
+           AND  st.stpo_id = s.stpo_id
+    </sql>
+	
+    <select id="selectTempInfoList" parameterType="TempInfo" resultMap="TempInfoResult">
+        select t.temp_id,t.temp_type,st.stpo_name,t.temp_describe,t.temp_time,s.standard_name,s.standard_quality,s.standard_cycle
+        FROM hn_standard_info s,hn_temp_info t,hn_stpo_info st
+        <where>
+            s.standard_id = t.standard_id
+            AND  st.stpo_id = s.stpo_id
+            <if test="tempId != null "> and temp_id = #{tempId}</if>
+             <if test="tempType != null  and tempType != '' "> and temp_type = #{tempType}</if>
+             <if test="standardId != null "> and standard_id = #{standardId}</if>
+             <if test="tempDescribe != null  and tempDescribe != '' "> and temp_describe = #{tempDescribe}</if>
+             <if test="tempTime != null "> and temp_time = #{tempTime}</if>
+         </where>
+    </select>
+    
+    <select id="selectTempInfoById" parameterType="Integer" resultMap="TempInfoResult">
+        select temp_id,temp_type,standard_id,temp_describe,temp_time FROM  hn_temp_info
+        where temp_id = #{tempId}
+    </select>
+        
+    <insert id="insertTempInfo" parameterType="TempInfo">
+        insert ignore into hn_temp_info
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="tempId != null  ">temp_id,</if>
+			<if test="tempType != null  and tempType != ''  ">temp_type,</if>
+			<if test="standardId != null  ">standard_id,</if>
+			<if test="tempDescribe != null  and tempDescribe != ''  ">temp_describe,</if>
+			<if test="tempTime != null  ">temp_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="tempId != null  ">#{tempId},</if>
+			<if test="tempType != null  and tempType != ''  ">#{tempType},</if>
+			<if test="standardId != null  ">#{standardId},</if>
+			<if test="tempDescribe != null  and tempDescribe != ''  ">#{tempDescribe},</if>
+			<if test="tempTime != null  ">#{tempTime},</if>
+         </trim>
+    </insert>
+
+	<delete id="deleteTempInfoById" parameterType="Integer">
+        delete from hn_temp_info where temp_id = #{tempId}
+    </delete>
+	
+    <delete id="deleteTempInfoByIds" parameterType="String">
+        delete from hn_temp_info where temp_id in 
+        <foreach item="tempId" collection="array" open="(" separator="," close=")">
+            #{tempId}
+        </foreach>
+    </delete>
+    
+</mapper>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aaa.project.system.inspectInfo.mapper.InspectInfoMapper">
+    
+    <resultMap type="InspectInfo" id="InspectInfoResult">
+        <result property="inspectId"    column="inspect_id"    />
+        <result property="inspectName"    column="inspect_name"    />
+        <result property="inspectAge"    column="inspect_age"    />
+        <result property="inspectSex"    column="inspect_sex"    />
+        <result property="user"    column="user"    />
+        <result property="password"    column="password"    />
+        <result property="stpoId"    column="stpo_id"    />
+        <result property="stpoName"    column="stpo_name"    />
+        <result property="phone" column="phone"/>
+    </resultMap>
+	
+	<sql id="selectInspectInfoVo">
+        select * from (select hn_inspect_info.inspect_id, hn_inspect_info.inspect_name, hn_inspect_info.inspect_age, hn_inspect_info.inspect_sex, hn_inspect_info.user, hn_inspect_info.password , hn_inspect_info.stpo_id,hn_stpo_info.stpo_name from hn_inspect_info,hn_stpo_info where hn_inspect_info.stpo_id=hn_stpo_info.stpo_id) aa
+    </sql>
+	
+    <select id="selectInspectInfoList" parameterType="InspectInfo" resultMap="InspectInfoResult">
+        <include refid="selectInspectInfoVo"/>
+        <where>  
+            <if test="inspectId != null "> and inspect_id = #{inspectId}</if>
+             <if test="inspectName != null  and inspectName != '' "> and inspect_name = #{inspectName}</if>
+             <if test="inspectAge != null "> and inspect_age = #{inspectAge}</if>
+             <if test="inspectSex != null  and inspectSex != '' "> and inspect_sex = #{inspectSex}</if>
+             <if test="user != null  and user != '' "> and user = #{user}</if>
+             <if test="password != null  and password != '' "> and password = #{password}</if>
+             <if test="stpoId != null "> and stpo_id = #{stpoId}</if>
+         </where>
+    </select>
+
+    <select id="selectInspectInfoToLogin" parameterType="String" resultMap="InspectInfoResult">
+        select * from hn_inspect_info where password=#{password} and phone=#{phone}
+    </select>
+
+    <select id="selectInspectInfoById" parameterType="Integer" resultMap="InspectInfoResult">
+        <include refid="selectInspectInfoVo"/>
+        where inspect_id = #{inspectId}
+    </select>
+        
+    <insert id="insertInspectInfo" parameterType="InspectInfo">
+        insert into hn_inspect_info
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="inspectId != null  ">inspect_id,</if>
+			<if test="inspectName != null  and inspectName != ''  ">inspect_name,</if>
+			<if test="inspectAge != null  ">inspect_age,</if>
+			<if test="inspectSex != null  and inspectSex != ''  ">inspect_sex,</if>
+			<if test="user != null  and user != ''  ">user,</if>
+			<if test="password != null  and password != ''  ">password,</if>
+			<if test="stpoId != null  ">stpo_id,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="inspectId != null  ">#{inspectId},</if>
+			<if test="inspectName != null  and inspectName != ''  ">#{inspectName},</if>
+			<if test="inspectAge != null  ">#{inspectAge},</if>
+			<if test="inspectSex != null  and inspectSex != ''  ">#{inspectSex},</if>
+			<if test="user != null  and user != ''  ">#{user},</if>
+			<if test="password != null  and password != ''  ">#{password},</if>
+			<if test="stpoId != null  ">#{stpoId},</if>
+         </trim>
+    </insert>
+	 
+    <update id="updateInspectInfo" parameterType="InspectInfo">
+        update hn_inspect_info
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="inspectName != null  and inspectName != ''  ">inspect_name = #{inspectName},</if>
+            <if test="inspectAge != null  ">inspect_age = #{inspectAge},</if>
+            <if test="inspectSex != null  and inspectSex != ''  ">inspect_sex = #{inspectSex},</if>
+            <if test="user != null  and user != ''  ">user = #{user},</if>
+            <if test="password != null  and password != ''  ">password = #{password},</if>
+            <if test="stpoId != null  ">stpo_id = #{stpoId},</if>
+        </trim>
+        where inspect_id = #{inspectId}
+    </update>
+
+    <update id="updateInfo" parameterType="InspectInfo">
+        update hn_inspect_info set phone=#{phone},password=#{password} where inspect_id=#{inspectId}
+    </update>
+    
+	<delete id="deleteInspectInfoById" parameterType="Integer">
+        delete from hn_inspect_info where inspect_id = #{inspectId}
+    </delete>
+	
+    <delete id="deleteInspectInfoByIds" parameterType="String">
+        delete from hn_inspect_info where inspect_id in 
+        <foreach item="inspectId" collection="array" open="(" separator="," close=")">
+            #{inspectId}
+        </foreach>
+    </delete>
+
+    <select id="find" parameterType="String" resultMap="InspectInfoResult">
+        select * from hn_inspect_info where phone=#{phone}
+    </select>
+</mapper>

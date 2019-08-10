@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aaa.project.system.stat.mapper.StatMapper">
+
+
+	<select id="selectStat" resultType="map">
+     SELECT t1.res_id resId, t2.plan_id planId,t3.hid_id hidId FROM
+    (select count(*) res_id from hn_res_info) t1,
+    (select count(*) plan_id from hn_plan_info) t2,
+    (select count(*) hid_id from hn_hid_info) t3
+    </select>
+    
+
+</mapper>

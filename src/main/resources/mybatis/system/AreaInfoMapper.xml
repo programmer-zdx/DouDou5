@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aaa.project.system.areaInfo.mapper.AreaInfoMapper">
+    
+    <resultMap type="AreaInfo" id="AreaInfoResult">
+        <result property="areaId"    column="area_id"    />
+        <result property="cityname"    column="cityname"    />
+    </resultMap>
+	
+	<sql id="selectAreaInfoVo">
+        select area_id, cityname from hn_area_info
+    </sql>
+	
+    <select id="selectAreaInfoList" parameterType="AreaInfo" resultMap="AreaInfoResult">
+        <include refid="selectAreaInfoVo"/>
+        <where>  
+            <if test="areaId != null "> and area_id = #{areaId}</if>
+             <if test="cityname != null  and cityname != '' "> and cityname = #{cityname}</if>
+         </where>
+    </select>
+    
+    <select id="selectAreaInfoById" parameterType="Integer" resultMap="AreaInfoResult">
+        <include refid="selectAreaInfoVo"/>
+        where area_id = #{areaId}
+    </select>
+        
+    <insert id="insertAreaInfo" parameterType="AreaInfo">
+        insert into hn_area_info
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="areaId != null  ">area_id,</if>
+			<if test="cityname != null  and cityname != ''  ">cityname,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="areaId != null  ">#{areaId},</if>
+			<if test="cityname != null  and cityname != ''  ">#{cityname},</if>
+         </trim>
+    </insert>
+	 
+    <update id="updateAreaInfo" parameterType="AreaInfo">
+        update hn_area_info
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="cityname != null  and cityname != ''  ">cityname = #{cityname},</if>
+        </trim>
+        where area_id = #{areaId}
+    </update>
+
+	<delete id="deleteAreaInfoById" parameterType="Integer">
+        delete from hn_area_info where area_id = #{areaId}
+    </delete>
+	
+    <delete id="deleteAreaInfoByIds" parameterType="String">
+        delete from hn_area_info where area_id in 
+        <foreach item="areaId" collection="array" open="(" separator="," close=")">
+            #{areaId}
+        </foreach>
+    </delete>
+    
+</mapper>

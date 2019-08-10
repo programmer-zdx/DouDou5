@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html  lang="zh" xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8">
+<head th:include="include :: header"></head>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+        <form class="form-horizontal m" id="form-standardInfo-edit" th:object="${standardInfo}">
+            <input id="standardId" name="standardId" th:field="*{standardId}"  type="hidden">
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">驻点id：</label>
+				<div class="col-sm-8">
+					<input id="stpoId" name="stpoId" th:field="*{stpoId}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">巡检项名称：</label>
+				<div class="col-sm-8">
+					<input id="standardName" name="standardName" th:field="*{standardName}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">质量标准：</label>
+				<div class="col-sm-8">
+					<input id="standardQuality" name="standardQuality" th:field="*{standardQuality}" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">巡检周期：</label>
+				<div class="col-sm-8">
+					<input id="standardCycle" name="standardCycle" th:field="*{standardCycle}" class="form-control" type="text">
+				</div>
+			</div>
+		</form>
+    </div>
+    <div th:include="include::footer"></div>
+    <script type="text/javascript">
+		var prefix = ctx + "system/standardInfo"
+		$("#form-standardInfo-edit").validate({
+			rules:{
+				xxxx:{
+					required:true,
+				},
+			}
+		});
+		
+		function submitHandler() {
+	        if ($.validate.form()) {
+	            $.operate.save(prefix + "/edit", $('#form-standardInfo-edit').serialize());
+	        }
+	    }
+	</script>
+</body>
+</html>

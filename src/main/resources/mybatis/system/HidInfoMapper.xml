@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aaa.project.system.hidInfo.mapper.HidInfoMapper">
+    
+    <resultMap type="HidInfo" id="HidInfoResult">
+        <result property="hidId"    column="hid_id"    />
+        <result property="planId"    column="plan_id"    />
+        <result property="resId"    column="res_id"    />
+        <result property="hidDescribe"    column="hid_describe"    />
+        <result property="deptId"    column="dept_id"    />
+        <result property="degree"    column="degree"    />
+        <result property="inspectId"    column="inspect_id"    />
+        <result property="inspectDate"    column="inspect_date"    />
+        <result property="pId"    column="p_id"    />
+        <result property="hidCont"    column="hid_cont"    />
+        <result property="status"    column="status"    />
+
+        <result property="planName"    column="plan_name"    />
+        <result property="sitename"    column="sitename"    />
+        <result property="deptName"    column="dept_name"    />
+        <result property="userName"    column="user_name"    />
+    </resultMap>
+	
+	<sql id="selectHidInfoVo">
+        <!-- select hid_id, plan_id, res_id, hid_describe, dept_id, degree, inspect_id, inspect_date, p_id, hid_cont, status from hn_hid_info -->
+        SELECT
+        p.plan_name,
+        r.sitename,
+        h.hid_describe,
+        u.dept_name,
+        h.degree,
+        u.user_name,
+        h.inspect_id,
+        h.inspect_date,
+        h.p_id,
+        h.hid_cont,
+        h.STATUS
+        FROM
+        hn_hid_info h,
+        hn_plan_info p,
+        hn_res_info r,
+        (SELECT
+        u.user_id,
+        u.dept_id,
+        u.user_name,
+        p.post_id,
+        d.dept_name
+        FROM
+        sys_user u,
+        sys_user_post p,
+        sys_post s,
+        sys_dept d
+        WHERE
+        u.user_id = p.user_id AND s.post_id = p.post_id AND d.dept_id = u.dept_id AND s.post_id = 4 AND d.dept_name LIKE '%驻点') u
+        WHERE
+        p.plan_id = h.plan_id
+        AND
+        r.res_id = h.res_id
+        AND
+        u.user_id =	h.inspect_id
+    </sql>
+	
+    <select id="selectHidInfoList" parameterType="HidInfo" resultMap="HidInfoResult">
+        <include refid="selectHidInfoVo"/>
+        <where>  
+            <if test="hidId != null "> and hid_id = #{hidId}</if>
+             <if test="planId != null "> and plan_id = #{planId}</if>
+             <if test="resId != null "> and res_id = #{resId}</if>
+             <if test="hidDescribe != null  and hidDescribe != '' "> and hid_describe = #{hidDescribe}</if>
+             <if test="deptId != null  and deptId != '' "> and dept_id = #{deptId}</if>
+             <if test="degree != null  and degree != '' "> and degree = #{degree}</if>
+             <if test="inspectId != null  and inspectId != '' "> and inspect_id = #{inspectId}</if>
+             <if test="inspectDate != null "> and inspect_date = #{inspectDate}</if>
+             <if test="pId != null "> and p_id = #{pId}</if>
+             <if test="hidCont != null  and hidCont != '' "> and hid_cont = #{hidCont}</if>
+             <if test="status != null  and status != '' "> and status = #{status}</if>
+         </where>
+    </select>
+    
+    <select id="selectHidInfoById" parameterType="Integer" resultMap="HidInfoResult">
+        <include refid="selectHidInfoVo"/>
+        where hid_id = #{hidId}
+    </select>
+
+    <select id="findAll" resultMap="HidInfoResult">
+        select * from hn_hid_info
+    </select>
+    <insert id="insertHidInfo" parameterType="HidInfo">
+        insert into hn_hid_info
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="hidId != null  ">hid_id,</if>
+			<if test="planId != null  ">plan_id,</if>
+			<if test="resId != null  ">res_id,</if>
+			<if test="hidDescribe != null  and hidDescribe != ''  ">hid_describe,</if>
+			<if test="deptId != null  and deptId != ''  ">dept_id,</if>
+			<if test="degree != null  and degree != ''  ">degree,</if>
+			<if test="inspectId != null  and inspectId != ''  ">inspect_id,</if>
+			<if test="inspectDate != null  ">inspect_date,</if>
+			<if test="pId != null  ">p_id,</if>
+			<if test="hidCont != null  and hidCont != ''  ">hid_cont,</if>
+			<if test="status != null  and status != ''  ">status,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="hidId != null  ">#{hidId},</if>
+			<if test="planId != null  ">#{planId},</if>
+			<if test="resId != null  ">#{resId},</if>
+			<if test="hidDescribe != null  and hidDescribe != ''  ">#{hidDescribe},</if>
+			<if test="deptId != null  and deptId != ''  ">#{deptId},</if>
+			<if test="degree != null  and degree != ''  ">#{degree},</if>
+			<if test="inspectId != null  and inspectId != ''  ">#{inspectId},</if>
+			<if test="inspectDate != null  ">#{inspectDate},</if>
+			<if test="pId != null  ">#{pId},</if>
+			<if test="hidCont != null  and hidCont != ''  ">#{hidCont},</if>
+			<if test="status != null  and status != ''  ">#{status},</if>
+         </trim>
+    </insert>
+	 
+    <update id="updateHidInfo" parameterType="HidInfo">
+        update hn_hid_info
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="planId != null  ">plan_id = #{planId},</if>
+            <if test="resId != null  ">res_id = #{resId},</if>
+            <if test="hidDescribe != null  and hidDescribe != ''  ">hid_describe = #{hidDescribe},</if>
+            <if test="deptId != null  and deptId != ''  ">dept_id = #{deptId},</if>
+            <if test="degree != null  and degree != ''  ">degree = #{degree},</if>
+            <if test="inspectId != null  and inspectId != ''  ">inspect_id = #{inspectId},</if>
+            <if test="inspectDate != null  ">inspect_date = #{inspectDate},</if>
+            <if test="pId != null  ">p_id = #{pId},</if>
+            <if test="hidCont != null  and hidCont != ''  ">hid_cont = #{hidCont},</if>
+            <if test="status != null  and status != ''  ">status = #{status},</if>
+        </trim>
+        where hid_id = #{hidId}
+    </update>
+
+	<delete id="deleteHidInfoById" parameterType="Integer">
+        delete from hn_hid_info where hid_id = #{hidId}
+    </delete>
+	
+    <delete id="deleteHidInfoByIds" parameterType="String">
+        delete from hn_hid_info where hid_id in 
+        <foreach item="hidId" collection="array" open="(" separator="," close=")">
+            #{hidId}
+        </foreach>
+    </delete>
+    
+</mapper>

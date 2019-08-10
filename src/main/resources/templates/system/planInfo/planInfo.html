@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro" xmlns:f="http://java.sun.com/jsp/jstl/fmt">
+<meta charset="utf-8">
+<head th:include="include :: header"></head>
+<body class="gray-bg">
+
+     <div class="container-div">
+		<div class="row">
+			<div class="col-sm-12 search-collapse">
+				<form id="formId">
+					<div class="select-list">
+						<ul>
+							<li>
+								计划名称：<input type="text" name="planName"/>
+							</li>
+
+							<li>
+								<a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;搜索</a>
+								<a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;重置</a>
+							</li>
+						</ul>
+					</div>
+				</form>
+			</div>
+
+	        <div class="btn-group-sm hidden-xs" id="toolbar" role="group">
+				<f:formatDate value="${use.createtime}" pattern="yyyy-MM-dd" />
+<!--				shiro:hasPermission="system:planInfo:add-->
+				<a class="btn btn-success" onclick="$.operate.add()" >
+					<i class="fa fa-plus"></i> 计划制作
+				</a>
+			</div>
+
+
+			<div class="col-sm-12 select-table table-striped">
+				<table id="bootstrap-table" data-mobile-responsive="true"></table>
+			</div>
+		</div>
+	</div>
+    <div th:include="include :: footer"></div>
+    <script th:inline="javascript">
+        var editFlag = [[${@permission.hasPermi('system:planInfo:edit')}]];
+        var removeFlag = [[${@permission.hasPermi('system:planInfo:remove')}]];
+        var prefix = ctx + "system/planInfo";
+
+        $(function() {
+            var options = {
+                url: prefix + "/list",
+                createUrl: prefix + "/add",
+                updateUrl: prefix + "/edit/{id}",
+                removeUrl: prefix + "/remove",
+				exportUrl: prefix + "/export",
+                modalName: "计划定制",
+				search: false,
+		        showExport: true,
+                columns: [{
+		            checkbox: true
+		        },
+                    {
+                        field : 'planId',
+                        title : '序号',
+                        visible: false
+                    },
+				{
+					field : 'planName',
+					title : '计划名称',
+					sortable: true
+				},
+                    {
+                        field : 'sitename',
+                        title : '站点名称',
+                        sortable: true
+                    },
+                    {
+                        field : 'longandlat',
+                        title : '站点经纬度',
+                        sortable: true
+                    },
+				{
+					field : 'dept_name',
+					title : '驻点名称',
+					sortable: true
+				},
+                    {
+                        field : 'phone',
+                        title : '驻点联系方式',
+                        sortable: true
+                    },
+                    {
+                        field : 'email',
+                        title : '驻点邮箱',
+                        sortable: true
+                    },
+
+				{
+					field : 'starttime',
+					title : '起始时间',
+					sortable: true
+				},
+				{
+					field : 'endtime',
+					title : '结束时间',
+					sortable: true
+				},
+                    {
+                        field : 'standard_name',
+                        title : '巡检项名称',
+                        sortable: true
+                    },
+                    {
+                        field : 'standard_quality',
+                        title : '质量标准',
+                        sortable: true
+                    },
+                    {
+                        field : 'standard_cycle',
+                        title : '周期',
+                        sortable: true
+                    },
+                    {
+                        field : 'planState',
+                        title : '审核结果',
+                        sortable: true
+                    },
+                    {
+                        field : 'checkResult',
+                        title : '审核内容',
+                        sortable: true
+                    },
+		        {
+		            title: '操作',
+		            align: 'center',
+		            formatter: function(value, row, index) {
+		            	var actions = [];
+                        actions.push('<a class="btn btn-success btn-xs ' + editFlag + '" href="#" onclick="$.operate.edit(\'' + row.planId + '\')"><i class="fa fa-edit"></i>计划修改</a> ');
+                        actions.push('<a class="btn btn-danger btn-xs ' + removeFlag + '" href="#" onclick="$.operate.remove(\'' + row.planId + '\')"><i class="fa fa-remove"></i>计划删除</a>');
+						return actions.join('');
+		            }
+		        }]
+            };
+            $.table.init(options);
+        });
+    </script>
+</body>
+</html>

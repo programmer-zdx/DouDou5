@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aaa.project.system.betInfo.mapper.BetInfoMapper">
+    
+    <resultMap type="BetInfo" id="BetInfoResult">
+        <result property="resId"    column="res_id"    />
+        <result property="deptId"    column="dept_id"    />
+        <result property="resState"    column="res_state"    />
+        <result property="resSernum"    column="res_sernum"    />
+        <result property="deptName"    column="dept_name"    />
+        <result property="sitename"    column="sitename"    />
+    </resultMap>
+	
+	<sql id="selectBetInfoVo">
+        SELECT
+            r.res_id,
+            r.sitename,
+            r.res_sernum,
+            r.dept_id,
+            r.res_state,
+            s.dept_name
+        FROM
+        (SELECT
+            r.res_id,
+            r.sitename,
+            r.res_sernum,
+            b.res_state,
+            b.dept_id
+        FROM
+            hn_bet_info b
+        LEFT JOIN hn_res_info r ON r.res_id = b.res_id )r
+
+        LEFT JOIN sys_dept s ON r.dept_id = s.dept_id
+            </sql>
+	
+    <select id="selectBetInfoList" parameterType="BetInfo" resultMap="BetInfoResult">
+        <include refid="selectBetInfoVo"/>
+        <where>  
+            <if test="resId != null "> and res_id = #{resId}</if>
+             <if test="deptId != null "> and dept_id = #{deptId}</if>
+             <if test="resState != null  and resState != '' "> and res_state = #{resState}</if>
+         </where>
+    </select>
+    
+    <select id="selectBetInfoById" parameterType="Integer" resultMap="BetInfoResult">
+        <include refid="selectBetInfoVo"/>
+        where res_id = #{resId}
+    </select>
+        
+    <insert id="insertBetInfo" parameterType="BetInfo">
+        insert into hn_bet_info
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="resId != null  ">res_id,</if>
+			<if test="deptId != null  ">dept_id,</if>
+			<if test="resState != null  and resState != ''  ">res_state,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="resId != null  ">#{resId},</if>
+			<if test="deptId != null  ">#{deptId},</if>
+			<if test="resState != null  and resState != ''  ">#{resState},</if>
+         </trim>
+    </insert>
+	 
+    <update id="updateBetInfo" parameterType="BetInfo">
+        update hn_bet_info
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="deptId != null  ">dept_id = #{deptId},</if>
+            <if test="resState != null  and resState != ''  ">res_state = #{resState},</if>
+        </trim>
+        where res_id = #{resId}
+    </update>
+
+	<delete id="deleteBetInfoById" parameterType="Integer">
+        delete from hn_bet_info where res_id = #{resId}
+    </delete>
+	
+    <delete id="deleteBetInfoByIds" parameterType="String">
+        delete from hn_bet_info where res_id in 
+        <foreach item="resId" collection="array" open="(" separator="," close=")">
+            #{resId}
+        </foreach>
+    </delete>
+    
+</mapper>
